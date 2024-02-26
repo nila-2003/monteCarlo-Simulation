@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monte Carlo Simulation</title>
+</head>
+<body>
+    <h1>Monte Carlo Simulation</h1>
+    <form action="/monte_carlo/" method="get">
+        <label for="team">Select Team:</label>
+        <select id="team" name="team">
+            {% for team in teams %}
+                <option value="{{ team }}">{{ team }}</option>
+            {% endfor %}
+        </select>
+        <label for="num_items">Number of Items:</label>
+        <input type="number" id="num_items" name="num_items" value="10" min="1">
+        <input type="submit" value="Run Simulation">
+    </form>
+    <div id="plot"></div>
+</body>
+</html>
